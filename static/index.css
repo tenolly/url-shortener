@@ -1,0 +1,65 @@
+html {
+    background: linear-gradient(to top left, rgb(114, 194, 240), rgb(25, 108, 218));
+    height: 100vh;
+}
+
+.links_section {
+    height: auto;
+    margin-top: calc((100vh - 135px) / 2);
+}
+
+.link_box {
+    display: flex;
+    height: 60px;
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 15px
+}
+
+.link {
+    box-sizing: border-box;
+    width: calc(100% - 80px);
+    border: 2px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    border-radius: 16px 0 0 16px;
+    text-indent: 16px;
+    font: 18px sans-serif;
+}
+
+.link:focus {
+    outline: none;
+}
+
+.short_url_button {
+    height: 60px;
+    width: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 16px 16px 0;
+    border: 2px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.blue_button:hover {
+    cursor: pointer;
+    background-color: rgb(168, 206, 240);
+}
+
+.green_button:hover {
+    cursor: pointer;
+    background-color: rgb(87, 223, 110);
+}
+
+.short_url_button:focus {
+    outline: none;
+}
+
+.svg_icon {
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin: auto;
+}
+
+.svg_icon path, .svg_icon polygon, .svg_icon rect {
+    fill: rgb(0, 0, 0);
+}
