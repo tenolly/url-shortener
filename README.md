@@ -11,5 +11,5 @@ Simple url shortener on flask.
 
 # Exit
 ```bash
-> Ctrl+C
+> Ctrl+C  
 ```
