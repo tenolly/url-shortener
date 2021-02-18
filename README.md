@@ -12,7 +12,7 @@ Simple url shortener on flask.
 > pip install virtualenv
 > py -m virtualenv .env
 ```
-3) Install libraries
+3) Install libraries.
 ```bash 
 > .env\Scripts\activate
 > pip install -r requirements.txt
@@ -20,12 +20,12 @@ Simple url shortener on flask.
 ```
 
 # Launch
+1) Start.
 ```bash
 > .env\Scripts\activate
 > python app.py
 ```
-
-# Exit
+2) Exit.
 ```bash
 > Ctrl+C  
 ```
