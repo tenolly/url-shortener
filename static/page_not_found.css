@@ -1,0 +1,17 @@
+.error_box {
+    font-family: "Verdana";
+    text-align: center;
+    color: rgb(101, 147, 247);
+}
+
+.error_title {
+    font-size: 95px;
+    font-weight: 600;
+    margin-top: 80px;
+    margin-bottom: -42px;
+}
+
+.error_text {
+    font-size: 42px;
+    font-weight: 600;
+}
