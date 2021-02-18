@@ -6,3 +6,5 @@
 > .env\Scripts\activate
 > python app.py
 ```
+
+Выход: Crtl+C
