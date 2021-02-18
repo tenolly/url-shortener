@@ -1,5 +1,6 @@
 html {
-    background: linear-gradient(to top left, rgb(114, 194, 240), rgb(25, 108, 218));
+    /*background: linear-gradient(to top left, rgb(122, 198, 241), rgb(62, 136, 231));*/
+    background: linear-gradient(to top left, rgb(162, 125, 223), rgb(57, 105, 236));
     height: 100vh;
 }
 
@@ -19,12 +20,13 @@ html {
 .link {
     display: block;
     box-sizing: border-box;
-    width: calc(100% - 80px);
+    width: calc(100% - 100px);
+    min-width: 440px;
     border: 2px solid rgb(0, 0, 0);
     border-right: 1px solid rgb(0, 0, 0);
     border-radius: 16px 0 0 16px;
-    text-indent: 16px;
     font: 18px sans-serif;
+    text-indent: 16px;
 }
 
 .link:focus {
@@ -42,12 +44,12 @@ html {
 
 .blue_button:hover {
     cursor: pointer;
-    background-color: rgb(168, 206, 240);
+    background-color: rgb(170, 210, 245);
 }
 
 .green_button:hover {
     cursor: pointer;
-    background-color: rgb(87, 223, 110);
+    background-color: rgb(85, 235, 110);
 }
 
 .short_url_button:focus {
