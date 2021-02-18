@@ -6,3 +6,4 @@
 > .env\Scripts\activate
 > python app.py
 ```
+Exit: Ctrl + C
