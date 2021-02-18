@@ -1,7 +1,7 @@
 # URL Shortener
 Simple url shortener on flask + vanilla js.
 
-# Install (for windows)
+# Install
 1) Download the repository and go to it.
 ```bash
 > git clone https://github.com/Good5263/url-shortener.git
