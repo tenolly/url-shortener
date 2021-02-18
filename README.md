@@ -1,5 +1,5 @@
 # URL Shortener
-Simple url shortener on flask.
+Simple url shortener on flask + vanilla js.
 
 # Install
 1) Download the repository and go to it.
