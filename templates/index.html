@@ -4,33 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>URL Shortener</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/index.css')}}">
+    <script defer src="{{ url_for( 'static', filename='js/recive_short_link.js')}}"></script>
+    <script defer src="{{ url_for( 'static', filename='js/copy_text.js')}}"></script>
 </head>
 
 <body>
-    <script>
-        async function receiveShortLink() {
-            let response = await fetch(window.location.href + "/new", {
-                method: "POST",
-                headers: { "Content-Type": "application/json;charset=utf-8" },
-                body: JSON.stringify({ "link": document.getElementById("user_link").value })
-            });
-
-            let result = await response.json();
-            if (result.success) {
-                document.getElementById("new_link").value = result.link
-            } else {
-                document.getElementById("new_link").value = result.error
-            }
-        }
-
-        function copyText() {
-            let text = document.getElementById("new_link");
-            text.select()
-            document.execCommand("copy");
-            text.value += ' '
-        }
-    </script>
     <div class="links_section">
         <div class="link_box">
             <input class="link" placeholder="Your URL" id="user_link">
