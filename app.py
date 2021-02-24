@@ -18,7 +18,7 @@ def create_app():
         if not database.new_url_exists(url):
             return abort(404)
         else:
-            # Добавить увеличение количества переходов
+            database.quantity_increment(url)
             return redirect(database.get_link(url))
 
     @app.route('/new', methods=['POST'])
