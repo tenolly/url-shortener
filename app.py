@@ -1,5 +1,6 @@
 import re
 
+import requests
 import waitress
 from flask import Flask, render_template, abort, request, jsonify, redirect
 
@@ -30,14 +31,18 @@ def create_app():
             "link": "ok"
         }
 
-        pattern = re.compile(
-            r"((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?")
+        pattern = re.compile(r"((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?")
         if not re.match(pattern, json_["link"]):
             response['success'] = False
             response["error"] = "Provided link is not a URL"
         else:
-            new_url = database.receive_new_url(json_["link"])
-            response["link"] = request.url_root + new_url
+            header_response = requests.head(json_["link"], allow_redirects=True)
+            if header_response.status_code == 200:
+                new_url = database.receive_new_url(json_["link"])
+                response["link"] = request.url_root + new_url
+            else:
+                response['success'] = False
+                response["error"] = "Provided link is not exists"
 
         return jsonify(response)
 
