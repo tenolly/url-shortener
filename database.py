@@ -25,7 +25,6 @@ def get_link(url):
 def quantity_increment(url):
     updated_link = links.find_one({"new_url": url})
     links.update(updated_link, {"$set": {"quantity": updated_link["quantity"] + 1}})
-    
 
 
 def create_new_url(link):
