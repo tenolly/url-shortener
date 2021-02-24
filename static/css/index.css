@@ -1,6 +1,6 @@
 html {
     /*background: linear-gradient(to top left, rgb(122, 198, 241), rgb(62, 136, 231));*/
-    background: linear-gradient(to top left, rgb(162, 125, 223), rgb(57, 105, 236));
+    background: linear-gradient(to top left, rgb(158, 115, 228), rgb(52, 103, 245));
     height: 100vh;
 }
 
@@ -42,18 +42,23 @@ html {
     border-left: 1px solid rgb(0, 0, 0);
 }
 
+.short_url_button:focus {
+    outline: none;
+}
+
+.copy_button_text {
+    font-weight: 700;
+    font: 17px sans-serif;
+}
+
 .blue_button:hover {
     cursor: pointer;
-    background-color: rgb(170, 210, 245);
+    background-color: rgb(156, 203, 245);
 }
 
 .green_button:hover {
     cursor: pointer;
     background-color: rgb(85, 235, 110);
-}
-
-.short_url_button:focus {
-    outline: none;
 }
 
 .svg_icon {
@@ -63,11 +68,27 @@ html {
     margin: auto;
 }
 
-.svg_icon path, .svg_icon polygon, .svg_icon rect {
+.rotate_icon {
+    transition: transform .6s;
+    transform-origin: center center;
+}
+
+.rotate_icon:hover {
+    transform: rotate(360deg);
+}
+
+.dark_icon {
+    color: rgb(0, 0, 0);
+}
+
+.dark_icon path, .dark_icon polygon, .dark_icon rect {
     fill: rgb(0, 0, 0);
 }
 
-.copy_button_text {
-    font-weight: 700;
-    font: 17px sans-serif;
+.white_icon {
+    color: rgb(255, 255, 255);
+}
+
+.white_icon path, .white_icon polygon, .white_icon rect {
+    fill: rgb(255, 255, 255);
 }
