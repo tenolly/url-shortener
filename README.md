@@ -1,6 +1,7 @@
 # URL Shortener
-Simple url shortener on flask + vanilla js.
-Online: https://good-url-shortener.herokuapp.com/
+Simple url shortener on flask + vanilla js.<br>
+Online: https://good-url-shortener.herokuapp.com/ <br>
+Warning: the desktop and heroku versions use different collections
 
 # Install
 1) Download the repository and go to it.
