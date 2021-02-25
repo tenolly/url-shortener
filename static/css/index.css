@@ -1,6 +1,5 @@
 html {
-    background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241));
-    height: 100vh;
+    background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241)) fixed;
 }
 
 .links_section {
