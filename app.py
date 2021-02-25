@@ -1,5 +1,7 @@
 import re
+import threading
 
+import schedule
 import waitress
 from flask import Flask, render_template, abort, request, jsonify, redirect
 
@@ -48,6 +50,17 @@ def create_app():
     return app
 
 
+def start_creating_db_backups():
+    def create_backups():
+        schedule.every(3).days.do(database.create_db_backup)
+        while True:
+            schedule.run_pending()
+
+    thread = threading.Thread(target=create_backups, daemon=True)
+    thread.start()
+
+
 if __name__ == "__main__":
+    start_creating_db_backups()
     app = create_app()
     waitress.serve(app)

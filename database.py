@@ -1,3 +1,5 @@
+import os
+import sqlite3
 from random import choices
 from pymongo import MongoClient
 
@@ -46,3 +48,25 @@ def receive_new_url(link):
         return get_new_url(link)
     else:
         return create_new_url(link)
+
+
+def create_db_backup(folder_for_save="db_backups"):
+    if len(os.listdir(folder_for_save)) > 0:
+        count = max(map(lambda file: int(file.split("_")[1].split(".")[0]), os.listdir(folder_for_save)))
+    else:
+        count = -1
+
+    connection = sqlite3.connect(f"{folder_for_save}/backup_" + str(count + 1) + ".sqlite")
+    cursor = connection.cursor()
+
+    cursor.execute("CREATE TABLE links (_id TEXT, link TEXT, new_url TEXT, quantity INT)")
+    connection.commit()
+
+    for link in links.find({}):
+        cursor.execute("INSERT INTO links VALUES(?, ?, ?, ?)", (str(link["_id"]), link["link"], link["new_url"], link["quantity"]))
+        connection.commit()
+    
+    connection.close()
+    
+    if len(os.listdir(folder_for_save)) > 5:
+        os.remove(os.path.join(folder_for_save, os.listdir(folder_for_save)[0]))
