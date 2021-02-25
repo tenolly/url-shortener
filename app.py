@@ -23,7 +23,7 @@ def create_app():
             database.quantity_increment(url)
             return redirect(database.get_link(url))
 
-    @app.route('/new', methods=['POST'])
+    @app.route("/new", methods=['POST'])
     def get_link():
         json_ = request.get_json(force=True)
         response = {
@@ -42,6 +42,10 @@ def create_app():
             response["link"] = request.url_root + new_url
 
         return jsonify(response)
+    
+    @app.route("/all_links")
+    def show_all_links():
+        return render_template("links.html", links=database.get_all_dicts())
 
     @app.errorhandler(404)
     def page_not_found(e):

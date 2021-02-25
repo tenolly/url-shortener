@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="nontranslate">
+
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', filename='images/favicon.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/links.css')}}">
+</head>
+
+<body>
+    <div class="box_for_table">
+        <h1 class="box_title">Links</h1>
+        <div class="table">
+            <div class="cell title">id</div>
+            <div class="cell title">link</div>
+            <div class="cell title">url</div>
+            <div class="cell title">quantity</div>
+            {% for item in links %}
+            <div class="cell">{{ loop.index }}</div>
+            <div class="cell">{{ item["link"] }}</div>
+            <div class="cell">{{ item["new_url"] }}</div>
+            <div class="cell">{{ item["quantity"] }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -24,6 +24,10 @@ def get_link(url):
     return links.find_one({"new_url": url})["link"]
 
 
+def get_all_dicts():
+    return [link for link in links.find({})]
+
+
 def quantity_increment(url):
     updated_link = links.find_one({"new_url": url})
     links.update(updated_link, {"$set": {"quantity": updated_link["quantity"] + 1}})
@@ -62,7 +66,7 @@ def create_db_backup(folder_for_save="db_backups"):
     cursor.execute("CREATE TABLE links (_id TEXT, link TEXT, new_url TEXT, quantity INT)")
     connection.commit()
 
-    for link in links.find({}):
+    for link in get_all_dicts():
         cursor.execute("INSERT INTO links VALUES(?, ?, ?, ?)", (str(link["_id"]), link["link"], link["new_url"], link["quantity"]))
         connection.commit()
     

@@ -1,0 +1,40 @@
+html {
+    background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241)) fixed;
+}
+
+.box_for_table {
+    width: 70vw;
+    margin: 60px auto;
+    border: 4px solid rgb(100, 53, 241);
+    background-color: rgb(255, 255, 255);
+}
+
+.box_title {
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    font-family: "Verdana";
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    border: 2px solid rgb(100, 53, 241);
+}
+
+.table {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 8fr 1fr 1fr;
+}
+
+.cell {
+    display: inline-block;
+    overflow: auto;
+    word-wrap: break-word;
+    border: 1px solid rgb(100, 53, 241);
+    font-family: "Verdana";
+    font-size: 16px;
+}
+
+.title {
+    text-align: center;
+    font-size: 18px;
+}
