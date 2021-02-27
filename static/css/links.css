@@ -13,28 +13,30 @@ html {
     font-size: 30px;
     line-height: 80px;
     text-align: center;
-    font-family: "Verdana";
+    font-family: monospace;
+    font-weight: 800;
     color: rgb(0, 0, 0);
     margin: 0px;
-    border: 2px solid rgb(100, 53, 241);
+    border: 2px solid rgb(112, 69, 240);
 }
 
 .table {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 8fr 1fr 1fr;
+    grid-template-columns: 1fr 7fr 1fr 1fr;
 }
 
 .cell {
     display: inline-block;
     overflow: auto;
     word-wrap: break-word;
-    border: 1px solid rgb(100, 53, 241);
-    font-family: "Verdana";
-    font-size: 16px;
+    border: 1px solid rgb(112, 69, 240);
+    font-family: monospace;
+    font-size: 18px;
 }
 
 .title {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
 }
