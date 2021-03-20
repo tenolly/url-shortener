@@ -9,22 +9,13 @@ Warning: the desktop and heroku versions use different collections
 > git clone https://github.com/Good5263/url-shortener.git
 > cd url-shortener
 ```
-2) Create a virtual environment.
+2) Install libraries.
 ```bash
-> pip install virtualenv
-> py -m virtualenv .env
-```
-3) Install libraries.
-```bash 
-> .env\Scripts\activate
 > pip install -r requirements.txt
-> deactivate
 ```
-
 # Launch
 1) Start.
 ```bash
-> .env\Scripts\activate
 > python app.py
 ```
 2) Exit.
