@@ -5,6 +5,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 pymongo==3.11.3
-waitress==1.4.4
+flask-ngrok==0.0.25
 Werkzeug==1.0.1
 schedule==0.6.0

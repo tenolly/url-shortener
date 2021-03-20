@@ -2,7 +2,7 @@ import re
 import threading
 
 import schedule
-import waitress
+from flask_ngrok import run_with_ngrok
 from flask import Flask, render_template, abort, request, jsonify, redirect
 
 import database
@@ -10,6 +10,7 @@ import database
 
 def create_app():
     app = Flask(__name__)
+    run_with_ngrok(app)
 
     @app.route("/")
     def hello_world():
@@ -67,4 +68,4 @@ def start_creating_db_backups():
 if __name__ == "__main__":
     start_creating_db_backups()
     app = create_app()
-    waitress.serve(app)
+    app.run()
