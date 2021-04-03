@@ -2,12 +2,12 @@ html {
     background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241)) fixed;
 }
 
-.links_section {
+.links__section {
     height: auto;
     margin-top: calc((100vh - 135px) / 2);
 }
 
-.link_box {
+.links__section-container {
     display: flex;
     height: 60px;
     width: 60vw;
@@ -15,7 +15,7 @@ html {
     margin-bottom: 15px
 }
 
-.link {
+.input__link {
     display: block;
     box-sizing: border-box;
     width: calc(100% - 100px);
@@ -27,11 +27,11 @@ html {
     text-indent: 16px;
 }
 
-.link:focus {
+.input__link:focus {
     outline: none;
 }
 
-.short_url_button {
+.input__button {
     height: 60px;
     width: 80px;
     background-color: rgb(255, 255, 255);
@@ -40,7 +40,15 @@ html {
     border-left: 1px solid rgb(0, 0, 0);
 }
 
-.short_url_button:focus {
+.input__button:hover > .svg_icon {
+    color: rgb(255, 255, 255);
+}
+
+.input__button:hover > .svg_icon path, .svg_icon polygon, .svg_icon rect {
+    fill: rgb(255, 255, 255);
+}
+
+.input__button:focus {
     outline: none;
 }
 
@@ -52,6 +60,10 @@ html {
 .blue_button:hover {
     cursor: pointer;
     background-color: rgb(156, 203, 245);
+}
+
+.blue_button:hover > .rotate_icon {
+    transform: rotate(360deg);
 }
 
 .green_button:hover {
@@ -69,24 +81,4 @@ html {
 .rotate_icon {
     transition: transform .6s;
     transform-origin: center center;
-}
-
-.rotate_icon:hover {
-    transform: rotate(360deg);
-}
-
-.dark_icon {
-    color: rgb(0, 0, 0);
-}
-
-.dark_icon path, .dark_icon polygon, .dark_icon rect {
-    fill: rgb(0, 0, 0);
-}
-
-.white_icon {
-    color: rgb(255, 255, 255);
-}
-
-.white_icon path, .white_icon polygon, .white_icon rect {
-    fill: rgb(255, 255, 255);
 }
