@@ -11,17 +11,20 @@ import database
 app = Flask(__name__)
 run_with_ngrok(app)
 
+
 @app.route("/")
 def hello_world():
     return render_template("index.html")
+
 
 @app.route("/<url>")
 def redirect_to_url(url):
     if not database.new_url_exists(url):
         return abort(404)
-    else:
-        database.quantity_increment(url)
-        return redirect(database.get_link(url))
+
+    database.quantity_increment(url)
+    return redirect(database.get_link(url))
+
 
 @app.route("/new", methods=["POST"])
 def get_link():
@@ -42,9 +45,11 @@ def get_link():
 
     return jsonify(response)
     
+
 @app.route("/all_links")
 def show_all_links():
     return render_template("links.html", links=database.get_all_dicts())
+
 
 @app.errorhandler(404)
 def page_not_found(error):
