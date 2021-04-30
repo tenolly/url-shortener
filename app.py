@@ -9,7 +9,7 @@ import database
 
 
 app = Flask(__name__)
-run_with_ngrok(app)
+# run_with_ngrok(app)
 
 
 @app.route("/")
@@ -56,16 +56,5 @@ def page_not_found(error):
     return render_template("page_not_found.html"), 404
 
 
-def start_creating_db_backups():
-    def create_backups():
-        schedule.every(3).days.do(database.create_db_backup)
-        while True:
-            schedule.run_pending()
-
-    thread = threading.Thread(target=create_backups, daemon=True)
-    thread.start()
-
-
 if __name__ == "__main__":
-    start_creating_db_backups()
-    app.run()
+    app.run(debug=True)
