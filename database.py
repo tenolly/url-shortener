@@ -1,54 +1,54 @@
-import os
-import sqlite3
+import string
 from random import choices
 from pymongo import MongoClient
 
 
 client = MongoClient("mongodb+srv://Good5263:1234@cluster0.e79t8.mongodb.net/URLs?retryWrites=true&w=majority")
-links = client.URLs.urls
+links = client.links.links
 
 
-def new_url_exists(url):
-    return bool(links.find_one({"new_url": url}))
-
-
-def link_exists(link): 
-    return bool(links.find_one({"link": link}))
-
-
-def get_new_url(link):
-    return links.find_one({"link": link})["new_url"]
-
-
-def get_link(url):
-    return links.find_one({"new_url": url})["link"]
-
-
-def get_all_dicts():
+def get_all_dicts() -> list:
     return [link for link in links.find({})]
 
 
+def link_exists(link: str) -> bool: 
+    return bool(links.find_one({"link": link}))
+
+
+def short_url_exists(url: str) -> bool:
+    return bool(links.find_one({"short_url": url}))
+
+
+def get_link(url: str) -> str:
+    return links.find_one({"short_url": url})["link"]
+
+
+def get_short_url(link: str) -> str:
+    return links.find_one({"link": link})["short_url"]
+
+
 def quantity_increment(url):
-    updated_link = links.find_one({"new_url": url})
+    updated_link = links.find_one({"short_url": url})
     links.update(updated_link, {"$set": {"quantity": updated_link["quantity"] + 1}})
 
 
-def create_new_url(link):
-    new_url = "".join(choices("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890", k=6))
-    if new_url_exists(new_url):
-        return create_new_url(link)
+def create_short_url(link):
+    short_url = "".join(choices(string.ascii_letters + string.digits, k=6))
+
+    if short_url_exists(short_url):
+        return create_short_url(link)
 
     links.insert_one({
         "link": link,
-        "new_url": new_url,
+        "short_url": short_url,
         "quantity": 0
     })
 
-    return new_url
+    return short_url
 
 
-def receive_new_url(link):
+def receive_short_url(link):
     if link_exists(link):
-        return get_new_url(link)
-    else:
-        return create_new_url(link)
+        return get_short_url(link)
+        
+    return create_short_url(link)
