@@ -11,6 +11,7 @@ html {
     display: flex;
     height: 60px;
     width: 60vw;
+    min-width: 550px;
     margin: auto;
     margin-bottom: 15px
 }
@@ -44,6 +45,10 @@ html {
     color: rgb(255, 255, 255);
 }
 
+.input__button:hover > .copy_button_text {
+    color: rgb(255, 255, 255);
+}
+
 .input__button:hover > .svg_icon path, .svg_icon polygon, .svg_icon rect {
     fill: rgb(255, 255, 255);
 }
@@ -55,6 +60,7 @@ html {
 .copy_button_text {
     font-weight: 700;
     font: 17px sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 .blue_button:hover {
