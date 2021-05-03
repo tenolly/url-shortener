@@ -6,7 +6,7 @@ Warning: the desktop and heroku versions use different collections
 # Install
 1) Download the repository and go to it.
 ```bash
-> git clone https://github.com/Good5263/url-shortener.git
+> git clone https://github.com/Good5263/url-shortener.git (temporerily not working)
 > cd url-shortener
 ```
 2) Install libraries.
