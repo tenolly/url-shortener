@@ -26,7 +26,7 @@ def redirect_to_url(url):
 
 @app.route("/all_links/<int:page_number>")
 def show_all_links(page_number=1):
-    links_in_page = 3
+    links_in_page = 20
     all_dicts = database.get_all_dicts()
     count_pages = ceil(len(all_dicts) / links_in_page)
 
