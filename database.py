@@ -1,13 +1,14 @@
 import string
 from random import choices
+from typing import List
+
 from pymongo import MongoClient
 
 
 client = MongoClient("mongodb+srv://Good5263:1234@cluster0.e79t8.mongodb.net/links?retryWrites=true&w=majority")
 links = client.links.links
 
-
-def get_all_dicts() -> list:
+def get_all_links() -> List[dict]:
     return [link for link in links.find({})]
 
 
