@@ -2,12 +2,12 @@ html {
     background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241)) fixed;
 }
 
-.links__section {
+.links-section {
     height: auto;
     margin-top: calc((100vh - 135px) / 2);
 }
 
-.links__section-container {
+.links-section__link-container {
     display: flex;
     height: 60px;
     width: 60vw;
@@ -16,7 +16,7 @@ html {
     margin-bottom: 15px
 }
 
-.input__link {
+.link-container__input {
     display: block;
     box-sizing: border-box;
     width: calc(100% - 100px);
@@ -28,11 +28,11 @@ html {
     text-indent: 16px;
 }
 
-.input__link:focus {
+.link-container__input:focus {
     outline: none;
 }
 
-.input__button {
+.link-container__button {
     height: 60px;
     width: 80px;
     background-color: rgb(255, 255, 255);
@@ -41,36 +41,39 @@ html {
     border-left: 1px solid rgb(0, 0, 0);
 }
 
-.input__button:focus {
+.link-container__button:hover {
+    cursor: pointer;
+}
+
+.link-container__button:focus {
     outline: none;
 }
 
-.copy_button_text {
-    font-weight: 700;
-    font: 17px sans-serif;
-    color: rgb(0, 0, 0);
-}
-
-.blue_button:hover {
-    cursor: pointer;
-    background-color: rgb(156, 203, 245);
-}
-
-.blue_button:hover > .rotate_icon {
-    transform: rotate(360deg);
-}
-
-.green_button:hover {
-    cursor: pointer;
-    background-color: rgb(85, 235, 110);
-}
-
-.svg_icon {
+.link-container__svg-icon {
     display: block;
     margin: auto;
 }
 
-.rotate_icon {
+.link-container__svg-icon_rotate {
     transition: transform .6s;
     transform-origin: center center;
+}
+
+.button-hover_blue:hover {
+    background-color: rgb(156, 203, 245);
+}
+
+.button-hover_green:hover {
+    background-color: rgb(85, 235, 110);
+}
+
+#parent_icon_rotate:hover > .link-container__svg-icon_rotate {
+    transform: rotate(360deg);
+}
+
+/* Use in static/js/index.js */
+.button_copy-text_clicked {
+    font-weight: 700;
+    font: 17px sans-serif;
+    color: rgb(0, 0, 0);
 }

@@ -10,17 +10,19 @@
 </head>
 
 <body>
-    <div class="links__section">
-        <div class="links__section-container">
-            <input class="input__link" placeholder="Your URL" id="user_link">
-            <button class="input__button blue_button" onclick="receiveShortLink()">
-                <img src="{{ url_for( 'static', filename='images/exchange.svg' ) }}" class="svg_icon rotate_icon">
+    <div class="links-section">
+        <div class="links-section__link-container">
+            <input class="link-container__input" placeholder="Your URL" id="user-link">
+            <button class="link-container__button button-hover_blue" id="parent_icon_rotate" onclick="receiveShortLink()">
+                <img class="link-container__svg-icon link-container__svg-icon_rotate"
+                    src="{{ url_for( 'static', filename='images/exchange.svg' ) }}">
             </button>
         </div>
-        <div class="links__section-container">
-            <input class="input__link" placeholder="New URL" id="new_link" readonly>
-            <button class="input__button green_button" id="copy_button" onclick="copyText()">
-                <img src="{{ url_for( 'static', filename='images/chain.svg' ) }}" class="svg_icon" id="copy_button_icon">
+        <div class="links-section__link-container">
+            <input class="link-container__input" placeholder="New URL" id="new-generated-link" readonly>
+            <button class="link-container__button button-hover_green" id="button_copy-text" onclick="copyText()">
+                <img class="link-container__svg-icon" src="{{ url_for( 'static', filename='images/chain.svg' ) }}"
+                    id="button_copy-text__icon">
             </button>
         </div>
     </div>
