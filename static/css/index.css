@@ -41,18 +41,6 @@ html {
     border-left: 1px solid rgb(0, 0, 0);
 }
 
-.input__button:hover > .svg_icon {
-    color: rgb(255, 255, 255);
-}
-
-.input__button:hover > .copy_button_text {
-    color: rgb(255, 255, 255);
-}
-
-.input__button:hover > .svg_icon path, .svg_icon polygon, .svg_icon rect {
-    fill: rgb(255, 255, 255);
-}
-
 .input__button:focus {
     outline: none;
 }
@@ -79,8 +67,6 @@ html {
 
 .svg_icon {
     display: block;
-    width: 42px;
-    height: 42px;
     margin: auto;
 }
 
