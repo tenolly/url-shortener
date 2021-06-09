@@ -1,4 +1,4 @@
-![Flask](https://img.shields.io/badge/flask-v1.1.2-blue?style=for-the-badge)
+![Flask](https://img.shields.io/badge/flask-v1.1.2-blue?style=flat-square)
 # URL Shortener
 Это простой скоращатель url, написанный с использованием flask, mongodb и js<br>
 (Мне очень лень заливать все это дело на Heroku, поэтому пока так)
