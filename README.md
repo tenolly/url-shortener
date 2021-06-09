@@ -1,6 +1,6 @@
-![Flask](https://img.shields.io/badge/flask-v1.1.2-blue?style=flat-square)
-![MongoDB](https://img.shields.io/badge/pymongo-v3.11.3-blue?style=flat-square)
-![Waitress](https://img.shields.io/badge/waitress-v1.4.4-blue?style=flat-square)
+![Flask](https://img.shields.io/badge/flask-1.1.2-blue?style=flat-square)
+![MongoDB](https://img.shields.io/badge/pymongo-3.11.3-blue?style=flat-square)
+![Waitress](https://img.shields.io/badge/waitress-1.4.4-blue?style=flat-square)
 
 # URL Shortener
 Это простой скоращатель url, написанный с использованием flask, mongodb и js<br>
