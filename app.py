@@ -43,19 +43,16 @@ def show_all_links(page_number=1):
 
 @app.route("/new", methods=["POST"])
 def get_new_link():
-    response = {
-        "success": True,
-        "error": None,
-        "link": "ok"
-    }
+    response = {}
 
     pattern = re.compile(r"((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?")
-    if not re.match(pattern, request.json["link"]):
-        response["success"] = False
-        response["error"] = "Provided link is not a URL"
-    else:
+    response["success"] = bool(re.match(pattern, request.json["link"]))
+
+    if response["success"]:
         short_url = db.receive_short_url(request.json["link"])
-        response["link"] = request.url_root + short_url
+        response["link"] = request.url_root + short_url 
+    else:
+        response["error"] = "Provided link is not a URL"
 
     return jsonify(response)
 
