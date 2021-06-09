@@ -1,24 +1,23 @@
 # URL Shortener
-Simple url shortener on flask + vanilla js.<br>
-Online: https://good-url-shortener.herokuapp.com/  (temporerily not working)<br>
-Warning: the desktop and heroku versions use different collections
+Это простой скоращатель url, написанный с использованием flask, mongodb и js<br>
+(Мне очень лень заливать все это дело на Heroku, поэтому пока так)
 
-# Install
-1) Download the repository and go to it.
+# Установка
+1) Скачиваем репозиторий zip-файлом или с помощью команды:
 ```bash
 > git clone https://github.com/Good5263/url-shortener.git
-> cd url-shortener
 ```
-2) Install libraries.
+2) Устанавливаем зависимости:
 ```bash
 > pip install -r requirements.txt
 ```
-# Launch
-1) Start.
+
+# Использование
+1) Запуск:
 ```bash
 > python app.py
 ```
-2) Exit.
+2) Остановка:
 ```bash
 > Ctrl+C  
 ```
