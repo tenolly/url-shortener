@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(237, 237, 237);
+}
+
+.error-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.error-box__container {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(91, 97, 105);
+}
+
+.error-box__image {
+    margin: auto;
+}
+
+.error-box__title {
+    font-size: 82px;
+    font-weight: 400;
+    margin: 5px 0px 0px;
+}
+
+.error-box__text {
+    font-size: 36px;
+    font-weight: 300;
+    margin-top: -20px;
+}

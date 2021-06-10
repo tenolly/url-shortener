@@ -3,6 +3,7 @@ from math import ceil
 
 import waitress
 from flask import Flask, render_template, abort, request, jsonify, redirect
+from werkzeug.exceptions import HTTPException
 
 from database import Database
 
@@ -57,9 +58,20 @@ def get_new_link():
     return jsonify(response)
 
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template("page_not_found.html"), 404
+@app.errorhandler(Exception)
+def handle_error(error):
+    status_codes = {
+        404: "Page not found",
+        500: "Server dead inside"
+    }
+
+    code = 500
+    if isinstance(error, HTTPException):
+        code = error.code
+    
+    code_value = status_codes.get(code, "Unknown error")
+
+    return render_template("error.html", code=code, value=code_value), code
 
 
 if __name__ == "__main__":
