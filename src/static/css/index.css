@@ -1,0 +1,79 @@
+html {
+    background: linear-gradient(to top left, rgb(164, 115, 243), rgb(64, 111, 241)) fixed;
+}
+
+.links-section {
+    height: auto;
+    margin-top: calc((100vh - 135px) / 2);
+}
+
+.links-section__link-container {
+    display: flex;
+    height: 60px;
+    width: 60vw;
+    min-width: 550px;
+    margin: auto;
+    margin-bottom: 15px
+}
+
+.link-container__input {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 100px);
+    min-width: 440px;
+    border: 2px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    border-radius: 16px 0 0 16px;
+    font: 18px sans-serif;
+    text-indent: 16px;
+}
+
+.link-container__input:focus {
+    outline: none;
+}
+
+.link-container__button {
+    height: 60px;
+    width: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 16px 16px 0;
+    border: 2px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
+}
+
+.link-container__button:hover {
+    cursor: pointer;
+}
+
+.link-container__button:focus {
+    outline: none;
+}
+
+.link-container__svg-icon {
+    display: block;
+    margin: auto;
+}
+
+.link-container__svg-icon_rotate {
+    transition: transform .6s;
+    transform-origin: center center;
+}
+
+.button-hover_blue:hover {
+    background-color: rgb(156, 203, 245);
+}
+
+.button-hover_green:hover {
+    background-color: rgb(85, 235, 110);
+}
+
+#parent_icon_rotate:hover > .link-container__svg-icon_rotate {
+    transform: rotate(360deg);
+}
+
+/* Use in static/js/index.js */
+.button_copy-text_clicked {
+    font-weight: 700;
+    font: 17px sans-serif;
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="nontranslate">
+
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', filename='images/favicon.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/links.css')}}">
+</head>
+
+<body>
+    <div class="table">
+        <h1 class="table__title">Links</h1>
+        <div class="table__cells">
+            <div class="table__cell table__cell-title">id</div>
+            <div class="table__cell table__cell-title">link</div>
+            <div class="table__cell table__cell-title">url</div>
+            <div class="table__cell table__cell-title">quantity</div>
+            {% for item in links %}
+            <div class="table__cell">{{ loop.index }}</div>
+            <div class="table__cell">{{ item["link"] }}</div>
+            <div class="table__cell">{{ item["short_url"] }}</div>
+            <div class="table__cell">{{ item["quantity"] }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="links">
+        {% if current_page_number > 1 %}
+             <a href="/all_links/1">1</a> /
+        {% endif %}
+        {% if current_page_number > 2 %}
+            <a href="/all_links/{{ current_page_number - 1 }}">{{ current_page_number - 1 }}</a> /
+        {% endif %}
+        <a href="/all_links/{{ current_page_number }}" class="active_page">{{ current_page_number }}</a>
+        {% if current_page_number + 1 < count_pages %}
+            / <a href="/all_links/{{ current_page_number + 1 }}">{{ current_page_number + 1 }}</a>
+        {% endif %}
+        {% if count_pages > current_page_number %}
+            / <a href="/all_links/{{ count_pages }}">{{ count_pages }}</a>
+        {% endif %}
+    </div>
+</body>
+
+</html>

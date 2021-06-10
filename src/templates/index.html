@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="nontranslate">
+
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for( 'static', filename='images/favicon.ico' ) }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/index.css' )}}">
+    <script defer src="{{ url_for( 'static', filename='js/index.js' )}}"></script>
+</head>
+
+<body>
+    <div class="links-section">
+        <div class="links-section__link-container">
+            <input class="link-container__input" placeholder="Your URL" id="user-link">
+            <button class="link-container__button button-hover_blue" id="parent_icon_rotate" onclick="receiveShortLink()">
+                <img class="link-container__svg-icon link-container__svg-icon_rotate"
+                    src="{{ url_for( 'static', filename='images/exchange.svg' ) }}">
+            </button>
+        </div>
+        <div class="links-section__link-container">
+            <input class="link-container__input" placeholder="New URL" id="new-generated-link" readonly>
+            <button class="link-container__button button-hover_green" id="button_copy-text" onclick="copyText()">
+                <img class="link-container__svg-icon" src="{{ url_for( 'static', filename='images/chain.svg' ) }}"
+                    id="button_copy-text__icon">
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
