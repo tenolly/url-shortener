@@ -1,0 +1,29 @@
+version: 1
+formatters:
+  default:
+    format: '[%(asctime)s] [%(levelname)s] %(message)s'
+  error:
+    format: '[%(asctime)s] [%(levelname)s] %(module)s: %(message)s'
+handlers:
+  requests_info:
+    class: logging.FileHandler
+    level: INFO
+    formatter: default
+    filename: logs/requests.log
+  errors:
+    class: logging.FileHandler
+    level: ERROR
+    formatter: error
+    filename: logs/errors.log
+loggers:
+  requests_info:
+    level: INFO
+    handlers: [requests_info]
+    propagate: no
+  errors:
+    level: ERROR
+    handlers: [errors]
+    propagate: no
+root:
+  level: INFO
+  handlers: [requests_info, errors]
