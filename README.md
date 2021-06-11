@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ### Использование
 1) Запуск:
 ```bash
-python app.py
+python src/app.py
 ```
 2) Остановка:
 ```bash
