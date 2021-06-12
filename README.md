@@ -2,32 +2,32 @@
 ![MongoDB](https://img.shields.io/badge/pymongo-v3.11.3-blue?style=flat-square)
 ![Waitress](https://img.shields.io/badge/waitress-v1.4.4-blue?style=flat-square)
 
-### URL Shortener
-Это простой скоращатель url, написанный с использованием flask, mongodb и js.<br>
-(Мне очень лень заливать все это дело на Heroku, поэтому пока так).
+### What is it?
+This is a simple url shortener. Written with using flask, mongodb and waitress.<br>
+Heroku: ...
 
-### Установка
-1) Скачиваем репозиторий zip-файлом или с помощью команды:
+### Installation
+1) Download repository:
 ```bash
 git clone https://github.com/Good5263/url-shortener.git
 ```
-2) Устанавливаем зависимости:
+2) Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Использование
-Запуск (wsgi server):
-```bash
-cd src
-waitress-serve app:app
-```
-Запуск (development server):
+### Using
+Run development server:
 ```bash
 cd src
 python app.py
 ```
-Отключение:
+Run wsgi server:
+```bash
+cd src
+waitress-serve app:app
+```
+Exit:
 ```bash
 Ctrl+C  
 ```
