@@ -49,7 +49,7 @@ def show_all_links(page_number=1):
     return render_template("links.html", current_page_number=page_number, count_pages=pages_count, links=show_links)
 
 
-@app.route("/new", methods=["POST"])
+@app.route("/new_link", methods=["POST"])
 def get_new_link():
     response = {}
 
