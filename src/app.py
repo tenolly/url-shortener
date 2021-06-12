@@ -10,6 +10,9 @@ from werkzeug.exceptions import HTTPException
 from database import Database
 
 
+settings = yaml.safe_load(open("logging.yaml"))
+logging.config.dictConfig(settings)
+
 app = Flask(__name__)
 db = Database()
 
@@ -80,6 +83,4 @@ def handle_error(error):
 
 
 if __name__ == "__main__":
-    settings = yaml.safe_load(open("logging.yaml"))
-    logging.config.dictConfig(settings)
     app.run()
