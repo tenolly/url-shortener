@@ -26,17 +26,17 @@
     </div>
     <div class="links">
         {% if current_page_number > 1 %}
-             <a href="/all_links/1">1</a> /
+             <a href="/links/1">1</a> /
         {% endif %}
         {% if current_page_number > 2 %}
-            <a href="/all_links/{{ current_page_number - 1 }}">{{ current_page_number - 1 }}</a> /
+            <a href="/links/{{ current_page_number - 1 }}">{{ current_page_number - 1 }}</a> /
         {% endif %}
-        <a href="/all_links/{{ current_page_number }}" class="active_page">{{ current_page_number }}</a>
+        <a href="/links/{{ current_page_number }}" class="active_page">{{ current_page_number }}</a>
         {% if current_page_number + 1 < count_pages %}
-            / <a href="/all_links/{{ current_page_number + 1 }}">{{ current_page_number + 1 }}</a>
+            / <a href="/links/{{ current_page_number + 1 }}">{{ current_page_number + 1 }}</a>
         {% endif %}
         {% if count_pages > current_page_number %}
-            / <a href="/all_links/{{ count_pages }}">{{ count_pages }}</a>
+            / <a href="/links/{{ count_pages }}">{{ count_pages }}</a>
         {% endif %}
     </div>
 </body>

@@ -31,20 +31,22 @@ def redirect_to_url(url):
     return redirect(db.get_link(url))
 
 
-@app.route("/all_links/<int:page_number>")
+@app.route("/links")
+@app.route("/links/<int:page_number>")
 def show_all_links(page_number=1):
-    links_in_page = 20
+    links_in_page = 15
     all_links = db.get_all_links()
-    count_pages = ceil(len(all_links) / links_in_page)
+    pages_count = ceil(len(all_links) / links_in_page)
 
-    if count_pages < page_number:
-        show_dicts = []
-    elif count_pages == page_number:
-        show_dicts = all_links[(page_number-1)*links_in_page:]
-    else:
-        show_dicts = all_links[(page_number-1)*links_in_page:page_number*links_in_page]
+    show_links = []
+    start_link_index = (page_number - 1) * links_in_page
 
-    return render_template("links.html", current_page_number=page_number, count_pages=count_pages, links=show_dicts)
+    if page_number == pages_count:
+        show_links.extend(all_links[start_link_index:])
+    elif page_number < pages_count:
+        show_links.extend(all_links[start_link_index:start_link_index+links_in_page])
+
+    return render_template("links.html", current_page_number=page_number, count_pages=pages_count, links=show_links)
 
 
 @app.route("/new", methods=["POST"])
