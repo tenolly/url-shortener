@@ -4,7 +4,7 @@
 
 ### What is it?
 This is a simple url shortener. Written with using flask, mongodb and waitress.<br>
-Heroku: ...
+Heroku: https://u-sh.herokuapp.com/
 
 ### Installation
 1) Download repository:
