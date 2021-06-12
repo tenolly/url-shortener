@@ -17,11 +17,17 @@ pip install -r requirements.txt
 ```
 
 ### Использование
-1) Запуск:
+Запуск (wsgi server):
 ```bash
-python src/app.py
+cd src
+waitress-serve app:app
 ```
-2) Остановка:
+Запуск (development server):
+```bash
+cd src
+python app.py
+```
+Отключение:
 ```bash
 Ctrl+C  
 ```
