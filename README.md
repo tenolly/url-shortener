@@ -6,7 +6,8 @@
 This is a simple url shortener. Written with using flask, mongodb and waitress.<br>
 Heroku: https://u-sh.herokuapp.com/<br>
 <br>
-Note: heroku uses a different collection ;)
+Note: heroku uses a different collection ;)<br>
+Note 2: /all_links locked in heroku.
 
 ### Installation
 1) Download repository:
