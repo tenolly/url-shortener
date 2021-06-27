@@ -19,6 +19,7 @@ class Database(metaclass=Singleton):
     client = MongoClient("mongodb+srv://Good5263:1234@cluster0.e79t8.mongodb.net/links?retryWrites=true&w=majority")
     collection = client.links.links
 
+    
     def get_all_links(self) -> List[dict]:
         return [link for link in self.collection.find({})]
 
