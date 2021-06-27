@@ -21,12 +21,10 @@ pip install -r requirements.txt
 ### Using
 Run development server:
 ```bash
-cd src
 python app.py
 ```
 Run wsgi server:
 ```bash
-cd src
 waitress-serve app:app
 ```
 Exit:
