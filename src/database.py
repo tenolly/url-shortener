@@ -18,32 +18,24 @@ class Singleton(type):
 class Database(metaclass=Singleton):
     client = MongoClient("mongodb+srv://Good5263:1234@cluster0.e79t8.mongodb.net/links?retryWrites=true&w=majority")
     collection = client.links.links
-
     
     def get_all_links(self) -> List[dict]:
-        return [link for link in self.collection.find({})]
-
+        return list(self.collection.find())
 
     def link_exists(self, link: str) -> bool: 
         return bool(self.collection.find_one({"link": link}))
 
-
     def short_url_exists(self, url: str) -> bool:
         return bool(self.collection.find_one({"short_url": url}))
-
 
     def get_link(self, url: str) -> str:
         return self.collection.find_one({"short_url": url})["link"]
 
-
     def get_short_url(self, link: str) -> str:
         return self.collection.find_one({"link": link})["short_url"]
 
-
     def quantity_increment(self, url: str) -> None:
-        updated_link = self.collection.find_one({"short_url": url})
-        self.collection.update(updated_link, {"$set": {"quantity": updated_link["quantity"] + 1}})
-
+        self.collection.find_one_and_update({"short_url": url}, {"$inc": {"quantity": 1}})
 
     def create_short_url(self, link: str) -> str:
         short_url = "".join(choices(string.ascii_letters + string.digits, k=6))
@@ -58,7 +50,6 @@ class Database(metaclass=Singleton):
         })
 
         return short_url
-
 
     def receive_short_url(self, link: str) -> str:
         if self.link_exists(link):
