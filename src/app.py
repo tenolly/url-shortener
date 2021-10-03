@@ -1,17 +1,16 @@
 import re
-import yaml
 import logging
 import logging.config
 from math import ceil
 
+import yaml
+import waitress
+from paste.translogger import TransLogger
 from flask import Flask, render_template, abort, request, jsonify, redirect
 from werkzeug.exceptions import HTTPException
 
 from database import Database
 
-
-settings = yaml.safe_load(open("logging.yaml"))
-logging.config.dictConfig(settings)
 
 app = Flask(__name__)
 db = Database()
@@ -85,4 +84,5 @@ def handle_error(error):
 
 
 if __name__ == "__main__":
-    app.run()
+    logging.config.dictConfig(yaml.safe_load(open("logging.yaml")))
+    waitress.serve(TransLogger(app, setup_console_handler=False))

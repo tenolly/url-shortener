@@ -5,7 +5,7 @@ formatters:
   error:
     format: '[%(asctime)s] [%(levelname)s] %(module)s: %(message)s'
 handlers:
-  requests_info:
+  requests:
     class: logging.FileHandler
     level: INFO
     formatter: default
@@ -16,9 +16,9 @@ handlers:
     formatter: error
     filename: logs/errors.log
 loggers:
-  requests_info:
+  waitress:
     level: INFO
-    handlers: [requests_info]
+    handlers: [requests]
     propagate: no
   errors:
     level: ERROR
@@ -26,4 +26,4 @@ loggers:
     propagate: no
 root:
   level: INFO
-  handlers: [requests_info, errors]
+  handlers: [requests, errors]
