@@ -3,8 +3,9 @@
 ![Waitress](https://img.shields.io/badge/waitress-v2.1.2-blue?style=flat-square)
 
 ## URL Shortener
-This is a simple url shortener made with flask and mongodb.<br>
-<p><img src="demo.gif"></p>
+This is a simple url shortener made with flask and mongodb.\
+&nbsp;\
+![URL Shortener demo](demo.gif)
 ## Installation
 1) Download repository (or zip and unpack it):
 ```bash
