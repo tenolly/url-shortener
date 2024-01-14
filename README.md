@@ -1,30 +1,23 @@
-![Flask](https://img.shields.io/badge/flask-v1.1.2-blue?style=flat-square)
-![MongoDB](https://img.shields.io/badge/pymongo-v3.11.3-blue?style=flat-square)
-![Waitress](https://img.shields.io/badge/waitress-v1.4.4-blue?style=flat-square)
+![Flask](https://img.shields.io/badge/flask-v2.3.2-blue?style=flat-square)
+![MongoDB](https://img.shields.io/badge/pymongo-v4.4.1-blue?style=flat-square)
+![Waitress](https://img.shields.io/badge/waitress-v2.1.2-blue?style=flat-square)
 
-### What is it?
-This is a simple url shortener. Written with using flask, mongodb and waitress.<br>
-Heroku: https://u-sh.herokuapp.com/<br>
-<br>
-Note: heroku uses a different collection ;)
+## URL Shortener?
+This is a simple url shortener made with flask and mongodb.
 
-### Installation
-1) Download repository:
+## Installation
+1) Download repository (or zip and unpack it):
 ```bash
-git clone https://github.com/Good5263/url-shortener.git
+git clone https://github.com/tenolly/url-shortener.git
 ```
 2) Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Using
+## Using
 Run server:
 ```bash
-cd src
+cd app
 python app.py
-```
-Exit:
-```bash
-Ctrl+C  
 ```
