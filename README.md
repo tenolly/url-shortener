@@ -2,9 +2,9 @@
 ![MongoDB](https://img.shields.io/badge/pymongo-v4.4.1-blue?style=flat-square)
 ![Waitress](https://img.shields.io/badge/waitress-v2.1.2-blue?style=flat-square)
 
-## URL Shortener?
+## URL Shortener
 This is a simple url shortener made with flask and mongodb.
-
+<img src="demo.gif">
 ## Installation
 1) Download repository (or zip and unpack it):
 ```bash
