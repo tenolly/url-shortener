@@ -4,7 +4,7 @@
 
 ## URL Shortener
 This is a simple url shortener made with flask and mongodb.<br>
-<img src="demo.gif">
+<p><img src="demo.gif"></p>
 ## Installation
 1) Download repository (or zip and unpack it):
 ```bash
