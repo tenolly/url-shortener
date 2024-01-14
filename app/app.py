@@ -85,4 +85,4 @@ def handle_error(error):
 
 if __name__ == "__main__":
     logging.config.dictConfig(yaml.safe_load(open("logging.yaml")))
-    waitress.serve(TransLogger(app, setup_console_handler=False))
+    waitress.serve(TransLogger(app, setup_console_handler=False), host="127.0.0.1", port=8080)
