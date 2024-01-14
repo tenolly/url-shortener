@@ -6,6 +6,7 @@
 This is a simple url shortener made with flask and mongodb.\
 &nbsp;\
 ![URL Shortener demo](demo.gif)
+
 ## Installation
 1) Download repository (or zip and unpack it):
 ```bash
@@ -17,8 +18,7 @@ pip install -r requirements.txt
 ```
 
 ## Using
-Run server:
+Run server from the "app" directory (website available at http://127.0.0.1:8080):
 ```bash
-cd app
 python app.py
 ```
